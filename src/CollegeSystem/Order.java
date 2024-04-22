@@ -1,0 +1,29 @@
+package CollegeSystem;
+public class Order {
+        private int customerId;
+        private int orderId;
+        private Product[] products;
+        private float totalPrice;
+
+        public Order(int customerId , Product[]orderplace){
+
+        }
+
+        public Order(int customerId, int orderId, Product[] products, float totalPrice) {
+            this.customerId = Math.abs(customerId);
+            this.orderId = Math.abs(orderId);
+            this.products = products;
+            this.totalPrice = Math.abs(totalPrice);
+        }
+        public void printOrderInfo() {
+            System.out.println("Order ID: " + orderId);
+            System.out.println("Customer ID: " + customerId);
+            System.out.println("Total Price: $" + totalPrice);
+            System.out.println("Products:");
+            for (Product product : products) {
+                if (product != null) {
+                    System.out.println("- " + product.getName() + " $" + product.getPrice());
+                }
+            }
+        }
+}
